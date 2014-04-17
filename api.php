@@ -40,13 +40,15 @@ function devbar_save_close() {
 	/// id, requestid, namespace, rowData
 	$zdbPDO->prepare('INSERT INTO devbar_custom_data VALUES(NULL, ?, ?, ?)');
 	$zdbPDO->beginTransaction();
+	*/
 	foreach(array_filter($zdbRegistry, function(){
 		print_r(func_get_args());
 	}) as $namespace => &$value) {
 		
 	}
-	$zdbPDO->commit(); */
+	echo 'asdfasdfsdfa';
+	/*$zdbPDO->commit(); */
 	$zdbRegistry['__save_close_flag'] = true;
 }
 
-// register_shutdown_function('devbar_save_close');
+register_shutdown_function('devbar_save_close');
