@@ -50,3 +50,7 @@ function devbar_save_close() {
 }
 
 register_shutdown_function('devbar_save_close');
+
+////// sample execution
+
+devbar_set('boom',[['name' => 'value']]);
