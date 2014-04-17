@@ -1,4 +1,4 @@
 <?php
 include 'api.php';
 
-devbar_set('boom','value');
+devbar_set('boom',[['name' => 'value']]);

@@ -38,7 +38,6 @@ function devbar_save_close() {
 	$varpath = get_cfg_var('zend.data_dir') . DIRECTORY_SEPARATOR . 'db';
 	$zdbPDO = new PDO("sqlite:{$varpath}/devbar.db", '', '', array());
 
-// 	CREATE TABLE devbar_custom_data (id INTEGER PRIMARY KEY AUTOINCREMENT, request_id INTEGER NOT NULL, namespace VARCHAR(255), data_json VARCHAR(2048));
 	$stmt = $zdbPDO->prepare('INSERT INTO devbar_custom_data VALUES(NULL, ?, ?, ?)');
 	
 	$zdbPDO->beginTransaction();
