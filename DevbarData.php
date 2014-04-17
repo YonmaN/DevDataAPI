@@ -6,7 +6,7 @@ class Data {
 	/**
 	 * @var array
 	 */
-	static $registry = array();
+	static $registry = ['__save_close_flag' => false];
 	/**
 	 * @var integer
 	 */
@@ -40,7 +40,7 @@ class Data {
 			return ;
 		}
 	
-		unset($zdbRegistry['__save_close_flag']);
+		unset(static::$registry['__save_close_flag']);
 	
 		$varpath = get_cfg_var('zend.data_dir') . DIRECTORY_SEPARATOR . 'db';
 		$zdbPDO = new \PDO("sqlite:{$varpath}/devbar.db", '', '', array());
