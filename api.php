@@ -49,4 +49,4 @@ function devbar_save_close() {
 	$zdbRegistry['__save_close_flag'] = true;
 }
 
-register_shutdown_function('devbar_save_close');
+// register_shutdown_function('devbar_save_close');
